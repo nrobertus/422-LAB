@@ -16,7 +16,16 @@ operations
 
   getName()
 
-
+  getTotalCharge() : Real
+    begin
+        declare ren:Rental, r:Real, total:Real;
+        total := 0;
+        for ren in self.rentals do 
+            r := ren.getCharge();
+            total := total + r;
+        end;
+        result := r;
+    end
 
   Statement()
     begin
@@ -30,7 +39,7 @@ operations
         aCharge.chVal:=ch;
         aCharge.chT:=t;
         insert(self,aCharge) into customerCharges
-      end
+      end   
     end
   end
 
