@@ -1,5 +1,20 @@
 model TemplatePattern
 
+class TemplateUser
+attributes
+operations
+    Main()
+    begin
+        declare a:AbstractTemplate, t1:Template1, t2:Template2, t3:Template3;
+        a := t1;
+        a.run();
+        a := t2;
+        a.run();
+        a := t3;
+        a.run();
+    end
+end
+
 class AbstractTemplate
 attributes
 operations
