@@ -11,6 +11,17 @@ abstract class Player
     strength: Integer
     health: Integer
   operations
+    init(s:Integer, h:Integer)
+      begin
+        self.panicState := new PanicState;
+        self.neutralState := new NeutralState;
+        self.attackState := new AttackState;
+        self.dieState := new DieState;
+        self.state := self.neutralState;
+        self.strength := s;
+        self.health := h;
+      end
+
 end
 
 abstract class PlayerState
