@@ -1,0 +1,101 @@
+--Travis Aplers, Nathan Robertus, HW2 .use file
+--Implementation of the Template Method Pattern
+
+model TemplatePattern
+
+class TemplateUser
+attributes
+operations
+    main()
+    begin
+        declare a:BaseTemplate;
+        a := new Template1;
+        a.run();
+        a := new Template2;
+        a.run();
+        a := new Template3;
+        a.run();
+    end
+end
+
+abstract class BaseTemplate
+attributes
+operations
+    doStuff1()
+    begin
+      WriteLine('Hello from base.doStuff1()');
+    end
+
+    doStuff2()
+    begin
+      WriteLine('Hello from base.doStuff2()');
+    end
+
+    doStuff3()
+    begin
+      WriteLine('Hello from base.doStuff3()');
+    end
+
+    run()
+    begin
+        self.doStuff1();
+        self.doStuff2();
+        self.doStuff3();
+    end
+
+end
+
+class Template1 < BaseTemplate
+attributes
+operations
+    doStuff1()
+    begin
+      WriteLine('Hello from T1.doStuff1()');
+    end
+
+    doStuff2()
+    begin
+      WriteLine('Hello from T1.doStuff2()');
+    end
+
+    doStuff3()
+    begin
+      WriteLine('Hello from T1.doStuff3()');
+    end
+end
+
+class Template2 < BaseTemplate
+attributes
+operations
+    doStuff1()
+    begin
+      WriteLine('Hello from T2.doStuff1()');
+    end
+
+    doStuff2()
+    begin
+      WriteLine('Hello from T2.doStuff2()');
+    end
+
+    doStuff3()
+    begin
+      WriteLine('Hello from T2.doStuff3()');
+    end
+end
+
+class Template3 < BaseTemplate
+attributes
+operations
+    doStuff1()
+    begin
+      WriteLine('Hello from T3.doStuff1()');
+    end
+
+    doStuff2()
+    begin
+      WriteLine('Hello from T3.doStuff2()');
+    end
+
+    -- We didn't implement doSetuff3() here to show that it inherits from the base class.
+
+end

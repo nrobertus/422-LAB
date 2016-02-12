@@ -10,23 +10,15 @@
     <showrolenames>true</showrolenames>
     <showgrid>false</showgrid>
   </diagramOptions>
-  <node id="AbstractTemplate" sizeCalculated="true" type="Class">
-    <name>AbstractTemplate</name>
-    <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
-      <x>142.8078086308384</x>
-      <y>73.08336418580058</y>
-    </strategy>
-    <hidden>false</hidden>
-  </node>
-  <node id="Template1" sizeCalculated="true" type="Class">
+  <node height="90.0" id="Template1" sizeCalculated="false" type="Class" width="108.0">
     <name>Template1</name>
     <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
       <x>300.192870801409</x>
-      <y>291.5904255928198</y>
+      <y>297.5904255928198</y>
     </strategy>
     <hidden>false</hidden>
   </node>
-  <node id="Template2" sizeCalculated="true" type="Class">
+  <node height="89.0" id="Template2" sizeCalculated="false" type="Class" width="115.0">
     <name>Template2</name>
     <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
       <x>166.57327644781572</x>
@@ -34,7 +26,7 @@
     </strategy>
     <hidden>false</hidden>
   </node>
-  <node id="Template3" sizeCalculated="true" type="Class">
+  <node height="94.0" id="Template3" sizeCalculated="false" type="Class" width="109.0">
     <name>Template3</name>
     <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
       <x>41.986218263284684</x>
@@ -45,19 +37,28 @@
   <node id="TemplateUser" sizeCalculated="true" type="Class">
     <name>TemplateUser</name>
     <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
-      <x>580.7681630421355</x>
-      <y>60.89487441631468</y>
+      <x>206.76816304213548</x>
+      <y>82.89487441631468</y>
+    </strategy>
+    <hidden>false</hidden>
+  </node>
+  <node height="136.0" id="BaseTemplate" sizeCalculated="false"
+    type="Class" width="163.0">
+    <name>BaseTemplate</name>
+    <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
+      <x>3.0</x>
+      <y>86.0</y>
     </strategy>
     <hidden>false</hidden>
   </node>
   <edge type="Generalization">
     <source>Template1</source>
-    <target>AbstractTemplate</target>
+    <target>BaseTemplate</target>
     <name>Inheritance</name>
     <properties/>
     <waypoints>
       <edgeproperty
-        id="Generalization::Template1::AbstractTemplate::WayPoint::0"
+        id="Generalization::Template1::BaseTemplate::WayPoint::0"
         sizeCalculated="true" type="WayPoint" userDefined="false" visible="true">
         <name>0</name>
         <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyAttachedIntersection">
@@ -69,7 +70,7 @@
         <hidden>false</hidden>
       </edgeproperty>
       <edgeproperty
-        id="Generalization::Template1::AbstractTemplate::WayPoint::1"
+        id="Generalization::Template1::BaseTemplate::WayPoint::1"
         sizeCalculated="true" type="WayPoint" userDefined="false" visible="true">
         <name>1</name>
         <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyAttachedIntersection">
@@ -85,12 +86,12 @@
   </edge>
   <edge type="Generalization">
     <source>Template2</source>
-    <target>AbstractTemplate</target>
+    <target>BaseTemplate</target>
     <name>Inheritance</name>
     <properties/>
     <waypoints>
       <edgeproperty
-        id="Generalization::Template2::AbstractTemplate::WayPoint::0"
+        id="Generalization::Template2::BaseTemplate::WayPoint::0"
         sizeCalculated="true" type="WayPoint" userDefined="false" visible="true">
         <name>0</name>
         <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyAttachedIntersection">
@@ -102,12 +103,20 @@
         <hidden>false</hidden>
       </edgeproperty>
       <edgeproperty
-        id="Generalization::Template2::AbstractTemplate::WayPoint::1"
-        sizeCalculated="true" type="WayPoint" userDefined="false" visible="true">
+        id="Generalization::Template2::BaseTemplate::WayPoint::1"
+        sizeCalculated="true" type="WayPoint" userDefined="true" visible="true">
         <name>1</name>
-        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyAttachedIntersection">
-          <userOffsetX>0.0</userOffsetX>
-          <userOffsetY>0.0</userOffsetY>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyRelativeToCorner">
+          <userOffsetX>101.0</userOffsetX>
+          <userOffsetY>123.51521456084731</userOffsetY>
+          <basisDeltaX>ABSOLUTE</basisDeltaX>
+          <deltaX>0.0</deltaX>
+          <maxDeltaX>1.7976931348623157E308</maxDeltaX>
+          <basisDeltaY>ABSOLUTE</basisDeltaY>
+          <deltaY>0.0</deltaY>
+          <maxDeltaY>1.7976931348623157E308</maxDeltaY>
+          <corner>NORTH_WEST</corner>
+          <relativeNodeId>BaseTemplate</relativeNodeId>
         </strategy>
         <id>1</id>
         <specialid>2</specialid>
@@ -118,12 +127,12 @@
   </edge>
   <edge type="Generalization">
     <source>Template3</source>
-    <target>AbstractTemplate</target>
+    <target>BaseTemplate</target>
     <name>Inheritance</name>
     <properties/>
     <waypoints>
       <edgeproperty
-        id="Generalization::Template3::AbstractTemplate::WayPoint::0"
+        id="Generalization::Template3::BaseTemplate::WayPoint::0"
         sizeCalculated="true" type="WayPoint" userDefined="false" visible="true">
         <name>0</name>
         <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyAttachedIntersection">
@@ -135,7 +144,7 @@
         <hidden>false</hidden>
       </edgeproperty>
       <edgeproperty
-        id="Generalization::Template3::AbstractTemplate::WayPoint::1"
+        id="Generalization::Template3::BaseTemplate::WayPoint::1"
         sizeCalculated="true" type="WayPoint" userDefined="false" visible="true">
         <name>1</name>
         <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyAttachedIntersection">
