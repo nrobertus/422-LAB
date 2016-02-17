@@ -1,0 +1,49 @@
+-- Metamodels
+
+- A pattern's metamodel is obtained by specializing the UML metamodel
+- The UML metamodel can be specialized to produce a restricted form of the metamodel that delivers a proper subset of valid UML
+
+   |               |          |       |
+   | UML METAMODEL | <------- |  RBML |
+   |               |          |       |
+                                /   \
+                              /       \
+                            /           \
+                          /               \
+                        /                   \
+                  |       |              |      |
+                  |  SPS  |              |  IPS |
+                  |       |              |      |
+
+[RBML] <---specialization--- [UML]
+
+ ClassRole | Subject 1..*
+ SubjectType: | Subject StateType 1..1
+ Attach( |obsv: | Observer) 1..1
+                  |
+  AssociationRole |
+  Observes        |
+                  |
+  ClassRole | Observer 1..*
+  ObserverState: | Obs.StateType 1..1
+  Update( |subj: | Subject) 1..1
+
+     _________     __________          _______
+    |         |   |          |        |       |
+    | Subject |   | Observer |------->| Class |_____
+    |_________|   |__________|        |_______|     |
+        |                                 ^         |
+        |                                 |         |
+        |_________________________________|         |
+     _____________                  ____________    |
+    |             |                |            |   |
+    | Behavioral  |                | Structural |___|
+    | Features    |                | Features   |
+    |_____________|                |____________|
+          ^                               ^
+          |                               |
+       ___|____                      _____|____
+      |        |                    |          |
+      | Attach |                    | Observer |
+      |________|                    | State    |
+                                    |__________|
