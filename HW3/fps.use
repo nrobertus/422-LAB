@@ -21,6 +21,61 @@ abstract class Player
         self.strength := s;
         self.health := h;
       end
+    seeOpponent(p:Player)
+      begin
+        self.state.seeOpponent(p);
+      end
+    lostOpponent()
+      begin
+        self.state.lostOpponent();
+      end
+    recieveBlow(damage:Integer)
+      begin
+        self.state.recieveBlow(damage);
+      end
+
+    statemachines
+
+      psm Usage
+        states
+          startUp:initial
+          -- Initial state after startup
+          neutralState [state = neutralState]
+
+          attackState [state = attackState]
+
+          panicState [state = panicState]
+
+          dieState [state = dieState]
+
+        transitions
+
+          startUp -> neutralState { create }
+
+          neutralState -> attackState { [p.strength <= strength and state = neutralState] seeOpponent() }
+
+          neutralState -> panicState { [p.strength > strength and state = neutralState] seeOpponent() }
+
+          neutralState -> neutralState { [state = neutralState] lostOpponent() }
+
+          neutralState -> neutralState { [state = neutralState] recieveBlow() }
+
+          attackState -> neutralState { [state = attackState] lostOpponent() }
+
+          attackState -> dieState { [state = attackState] recieveBlow() [health <= 0]}
+
+          attackState -> attackState { [state = attackState] recieveBlow() [health > 0]}
+
+          attackState -> attackState { [state = attackState] seeOpponent()}
+
+          panicState -> neutralState { [state = panicState] lostOpponent() }
+
+          panicState -> dieState { [state = panicState] recieveBlow() [health <= 0]}
+
+          panicState -> panicState { [state = panicState] recieveBlow() [health > 0]}
+
+          panicState -> panicState { [state = panicState] seeOpponent() }
+      end
 
 end
 
