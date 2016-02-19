@@ -1,0 +1,47 @@
+Metamodels
+
+Metamodel constraints (OCL)
+
+| [EX]
+| context: Subject
+| inv: self isAbstract = false
+
+| [EX]
+| context: Sub
+| inv: self.lowerBound() = 1 and self.upperBound() = 1
+
+Check structural conformance
+
+| Algo
+|| 1. Bind model elements to roles
+|| 2. Check multiplicities
+|| 3. For each classifier,
+||| 3.1 it satisfies metamodel contraints for each role
+||| 3.2 features are bound to feature role
+||| 3.3 mandatory features exist
+|| 4. Check relationship conformance
+
+ [EX]
+   _______________________________
+  |             Kiln              |
+  | A | ready:int                 |
+  | A | temp:temp                 |
+  | O | AttachTempObs(o:TempObs)  |
+  |_______________________________|
+              subj| [1..1]
+                  |
+                  |  obsTemp
+                  |
+              obs | [*]
+   _______________|_______________
+  |           TempObs             |
+  | A | currTemp: Temp            |
+  | O | UpdateTemp(k:Kiln)        |
+  |_______________________________|
+
+[EX]
+
+
+context |subject : Attach(|obsv:|Observer)
+pre:true
+post: self.|obs = self.|obs@pre->including(|obs)
