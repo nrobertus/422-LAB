@@ -1,0 +1,16 @@
+model TestAggregationComposition
+ 
+-- classes
+ 
+class A
+end
+
+class B
+end
+  
+-- associations
+ 
+composition AC1 between
+  A[0..*] role parent
+  B[0..*] role child
+end

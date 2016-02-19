@@ -1,0 +1,58 @@
+model Inheritance-- classes
+enum EmployeeState {Current, notCurrent}
+class Person
+attributes
+ name : String init : 'Peter Pan'
+ address : String
+operations
+ getName() : String
+ setName(s:String)
+ getAddress() : String 
+ setAddress(a:String)endclass Employee < Person
+attributes
+ ssn : Integer init : 555555555
+ companyID : Integer derived : self.ssn + 1000 -- test syntax for derived attributes
+ group : String
+ salary : Real
+ isNew : Boolean
+ status : EmployeeState
+operations
+ getSSN() : Integer
+ setSSN(num:Integer)
+ getGroup() : String
+ setGroup(g:String)
+ getSalary() : Real
+ setSalary(s:Real)
+ makeCurrent()endclass Professor <  Employee 
+operations
+ makeCurrent()
+endclass Assistant < Employeeendclass Student < Personend-- associations
+
+-- constraints
+
+constraints
+
+context Employee
+inv : salary <=500000.00
+
+context Employee::makeCurrent()
+pre : status = EmployeeState::notCurrent
+post :status = EmployeeState::Current and isNew
+
+context Professor
+inv : salary <= 650000.00 --Violates Liskov's principle
+
+
+-- The precondition violates Liskov's principle because we have strengthened the precondition.
+-- This means that we cannot replace a Professor for an Employee.
+
+-- The postcondition also violates Liskov's principle because the post condition was weakened.
+-- We removed the condition that the Employee remain current, so the Professor will not
+-- fulfill the expectations of a new Employee.
+
+context Professor::makeCurrent()
+pre : status = EmployeeState::notCurrent and salary < 100000
+post : isNew
+
+
+
