@@ -1,0 +1,50 @@
+Wednesday Exam
+
+Read the dang paper, son.
+Bring 3 or 4 design patterns with you (clearly the singleton is a good option)
+Open notes, open book, open homework, just no internet.
+
+ - Definitions
+  - Model Driven Development
+  - Model Driven Engineering
+  - Model Driven Architecture
+  - RBML (example of metamodeling language)
+  - OCL
+  - UML
+  - SOIL
+  - OCL vs SOIL
+ - Diagrams
+  - Object
+  - Class
+    - Aggregation -> Beware of cycles
+    - Composition
+    - Association
+    - Dependencies
+    - Generalization
+    - Realization
+  - Sequence ->
+  - Event / state
+- OCL -> Studio lab 1 as example
+  - Invariants
+  - Preconditions
+  - Postconditions
+  - Navigation
+  - Collections
+    - Ordered sets
+    - Sets
+    - Bags
+    - Sequences
+  - Define attributes (includes derived attributes, operations)
+  - Inits
+  - Association Classes
+  - Inheritance (IsOclTypeOf)
+- SOIL -> go to webpages, examples, BNF form of language (http://useocl.sourceforge.net/w/index.php/SOIL)
+- Liskov's principles
+  - Invariants
+  - Preconditions
+  - Postconditions
+- Metamodeling
+  - RBML -> M0 to M3
+  - SPS model
+  - IPS model
+  - OCL expression at metamodel level (base + | + name)
