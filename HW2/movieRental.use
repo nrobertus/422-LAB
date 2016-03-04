@@ -12,6 +12,7 @@ attributes
 operations
   addRental()
     begin
+      self.numRen := self.numRen + 1;
     end
 
   getName()
@@ -20,7 +21,7 @@ operations
     begin
         declare ren:Rental, r:Real, total:Real;
         total := 0;
-        for ren in self.rentals do 
+        for ren in self.rentals do
             r := ren.getCharge();
             total := total + r;
         end;
@@ -39,7 +40,7 @@ operations
         aCharge.chVal:=ch;
         aCharge.chT:=t;
         insert(self,aCharge) into customerCharges
-      end   
+      end
     end
   end
 
@@ -51,7 +52,7 @@ operations
     begin
       result := self.daysRented;
     end
-    
+
     getCharge():Real
     begin
       declare wrkCh:Real, pc:PriceCode,dy:Integer;
@@ -78,7 +79,7 @@ operations
   getMovie(): Movie
     begin
       result := self.movie;
-    end 
+    end
   end
 
 class Movie

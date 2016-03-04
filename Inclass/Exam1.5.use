@@ -1,0 +1,11 @@
+model A
+
+class A
+  attributes
+  operations
+end
+
+composition AC between
+  A[1] role a_1
+  A[1] role a_2
+end
