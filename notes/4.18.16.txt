@@ -1,0 +1,29 @@
+Lecture 4/18/16
+===========================
+==  METAMORPHIC TESTING  ==
+===========================
+
+You can't actually prove a program is correct, you can just increase your confidence that it is.
+
+Components:
+  Program
+  Test cases (automated or manually written)
+  Outputs from program (prompted by test cases)
+  Test oracle (compares inputs and outputs)
+
+
+In scientific software, oracles don't exist, or are difficult to implement
+
+Black box testing method, but with domain knowledge
+Rather than comparing inputs/outputs, look for specific metamorphic relations
+
+Metamorphic relations
+  Specifies how the output should change dependent on the change in input
+
+Example: MR Addition
+  Input change: output should increase or remain constant
+
+Applications:
+  Bioinformatics
+  Machine Learning
+  Mathematics
