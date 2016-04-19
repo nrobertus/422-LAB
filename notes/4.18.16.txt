@@ -27,3 +27,17 @@ Applications:
   Bioinformatics
   Machine Learning
   Mathematics
+
+Her research:
+
+  Automated methods for identifying metamorphic relations from source code
+    Supervised learning methods highly effective
+    Unsupervised learning
+    Code clone detection
+  Metamorphic relation prioritization/selection
+
+  Automated initial test case generation
+
+  Applying metamorphic tests to scientific software in different domains
+    Bioinformatics - BLAST, TUXIDO, BBMap
+    Optimization programs
