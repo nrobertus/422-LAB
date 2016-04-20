@@ -1,3 +1,5 @@
+## Travis, I want to preface this with a warning: I was in an extremely sarcastic mood when I took these notes. You've been warned. ##
+
 Lecture 4/20/16
 
 A lecture from an intern at Zoot to a handful of deadpan seniors. Great.
@@ -36,3 +38,9 @@ Editor's note: His color choices on graphs are insane. Chartreuse for lines betw
 Another editor's note: Right now, two people are picking their noses, five are on reddit, and one is almost asleep.
                        If we are testing the coverage of people not paying attention, we are at almost 80%, approaching
                        the limits of Zoot's testing coverage.
+
+He basically just said that Zoot is testing a few nodes a lot, but they should be testing more nodes a few times. Super duper.
+
+He has several blank slides because he forgot to save his slideshow. We are going rogue now.
+
+He's sitting on the desk now. What a cool dude.
