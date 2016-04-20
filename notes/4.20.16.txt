@@ -1,0 +1,38 @@
+Lecture 4/20/16
+
+A lecture from an intern at Zoot to a handful of deadpan seniors. Great.
+
+=========================================================================
+= Defining and Applying Test Coverage Criterion in an Industrial Domain = <-- this looks suspiciously like a capstone presentation...
+=========================================================================
+
+Zoot Enterprises <- Yep, this definitely sponsored content
+ made a tool called WebRules, somehow I should care
+  Oh wait, WebRules is like Zoot's little version of LabView... Drag and drop pre-baked code blocks. Terrific.
+
+Zoot statement blocks
+  Attributes
+  Rules
+  Procedures
+
+Testing
+  Attribute coverage - The number of attributes being tested in a platform
+  Rule coverage - Exercise rules with a test
+  Procedure coverage - number of procedures tested
+
+  Apparently Zoot doesn't (or maybe didn't? not sure) have great coverage. Like 80% coverage on most things.
+
+Prioritizing coverage
+  Object complexity
+  risk-based
+  # of dependencies
+
+Complexity:
+  McCabe's Cyclomatic Complexity - Google it. pretty much the number of branches
+  More complexity = more tests. Duh.
+
+Editor's note: His color choices on graphs are insane. Chartreuse for lines between nodes? What on earth?
+
+Another editor's note: Right now, two people are picking their noses, five are on reddit, and one is almost asleep.
+                       If we are testing the coverage of people not paying attention, we are at almost 80%, approaching
+                       the limits of Zoot's testing coverage.
