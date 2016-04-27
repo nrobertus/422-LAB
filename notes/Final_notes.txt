@@ -1,0 +1,144 @@
+Exam Review
+4/27/16
+============================================
+Testing book:
+    Chapter 1 -
+      Definitions - not memorized, but understood. Explain what something means
+    Chapter 2 =================================================
+      Only to 2.4
+      Intro to graphs
+      Know the difference between test paths and regular paths.
+        Paths, sub-paths have nothing to do with test paths
+      2.2.1
+        Coverage criterion
+          Node
+          Edge
+          Pair
+          PPC (Prime Path coverage)
+          CPC (Complete Path coverage)
+        Side trips
+        Detours
+        Prime Paths
+        Simple Paths
+        Algorithm for prime paths
+      2.2
+        Data Flow Criterion
+          ADC - All Definition
+          AUC - All Uses
+          ADUPC - All DU paths coverage
+        DU paths
+        DU pairs
+      2.3
+        Subsumption relationships
+        Graph Coverage of source code
+      2.4
+        Graph coverage of design elements
+        Yo-yo
+    Chapter 3 ==============================================
+      Logic Coverage, predicate coverage
+      Clauses
+      3.1
+        Logic vs clauses
+      3.2
+        Predicate coverage
+        Clause coverage
+        Combinational coverage
+        Active clause coverage
+          General
+          Correlated
+          Restricted
+          (DONT WORRY AOBUT INACTIVE CLAUSE COVERAGE)
+      3.3
+        K-Maps
+        DNF predicate
+          Implicant coverage
+          Unique True Point coverage  -Needs minimal DNF w/ K-map
+          Unique False Point coverage -Needs minimal DNF w/ K-map
+      3.3.1
+        Transformation issues - Not heavily covered, but should be aware
+
+    Chapter 4 =================================================
+      ISP - Input Space Partitioning
+      4.1
+        Interface-based partitioning
+        Simplest
+        PWC - Pair-Wise Coverage
+        TWC - T-Wise coverage
+        AOCC
+        BCC  - Base Choices
+        MBCC - Multiple Base Choices
+
+    K-MAPS =====================================================
+
+      P == A AND (!b OR c) == a(!b+c)
+
+      DNF == ( a AND !b ) OR ( a AND c )
+
+      P == a!b + ac
+
+      Map guide
+
+      c\ab _00_01__11__10_
+        0 |_0_|_1_|_2_|_3_|
+        1 |_4_|_5_|_6_|_7_|
+
+      K-MAP:
+
+      c\ab _00_01__11__10_
+        0 |_0_|_0_|_0_|_1_|
+        1 |_0_|_0_|_1_|_1_|
+
+      When A determines the value
+        Groups: [3, 7, 0, 4], [5, 6]
+          1. !b OR (b AND c)
+          2. (!b OR b) AND (!b OR c)
+          3. !b OR c
+      When B determines the value
+        Groups: [2, 3]
+          1. a AND !c
+
+      When C determines the value
+        Groups: [2, 6]
+          1. a AND b
+
+      To make a minimal DNF, don't include 0s in the K-map, just minimize number of clusters of 1s.
+
+    IMPLICANT COVERAGE =============================================
+      1. Implicaint Coverage
+        Start with a DNF - DOES NOT HAVE TO MINIMAL
+        Obtain F
+        Obtain F-BAR
+        Require test requirements contain all implicants that evaluate to true.
+          EX - F = ab OR b!c
+              !F = !b OR (!a AND c)
+              Implicants: a, b, c
+                ab       |T  T
+                b!c      |   T  F
+                !b       |   F
+                !a AND c |F     T
+
+                4 test cases, can be reduced to two. [(TTF),(FFT)]
+
+                This isn't very thorough, but at least covers all the implicants.
+
+
+
+      2. Unique True Point
+        Like Implicant, but without combining
+        Unique points in implicant are true, all other points are false.
+        Start with a MINIMAL DNF
+        Obtain F
+        Obtain F-BAR
+        Require test requirements to contain a unique true point for each implicant in F and in each implicant in F-BAR
+          EX - F = ab OR b!c <- Already minimal DNF
+              !F = !b OR (!a AND c)
+
+              Implicants: a, b, c
+                ab       |T  T  T
+                b!c      |F  T  F
+                !b       |T  F  T, T F F, F F F
+                !a AND c |F  F  T
+
+
+      3. Correspoinding Unique True Point coverage
+      4. Near False Point coverage
